@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity() {
         webView.settings.javaScriptCanOpenWindowsAutomatically = true
 
         //http://10.0.2.2
-        // http://www.google.co.jp
-        // http://10.0.2.2:8080
-        webView.loadUrl("http://10.0.2.2/user")
+        // http://www.google.co.jp   http://10.0.2.2/mobile/favorite
+        // http://10.0.2.2:8080   http://10.0.2.2/mobile/login
+        webView.loadUrl("http://10.0.2.2/mobile/favorite")
 
         webView.webViewClient = object : WebViewClient() {//ここがないないと一部のurlがredirectする
             @Deprecated("Deprecated in Java")

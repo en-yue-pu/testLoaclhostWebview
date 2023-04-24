@@ -28,7 +28,14 @@ class MainActivity : AppCompatActivity() {
         webView.settings.javaScriptCanOpenWindowsAutomatically = true
 
         //http://10.0.2.2 http://www.google.co.jp  http://10.0.2.2:8080
-        webView.loadUrl("http://10.0.2.2:8080")
+        webView.loadUrl("http://10.0.2.2/user")
 
+        webView.webViewClient = object : WebViewClient() {//ここがないないと一部のurlがredirectする
+            @Deprecated("Deprecated in Java")
+            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+                view.loadUrl(url)
+                return true
+            }
+        }
     }
 }

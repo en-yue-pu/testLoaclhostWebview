@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         webView = findViewById<View>(R.id.webview) as WebView//从UI拿实例过来,对他进行操作
-//        webView.webViewClient = WebViewClient()
 
         webView.settings.javaScriptEnabled = true
         // 允许访问混合内容（包括 HTTP 和 HTTPS）
@@ -27,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         }
         webView.settings.javaScriptCanOpenWindowsAutomatically = true
 
-        //http://10.0.2.2 http://www.google.co.jp  http://10.0.2.2:8080
+        //http://10.0.2.2
+        // http://www.google.co.jp
+        // http://10.0.2.2:8080
         webView.loadUrl("http://10.0.2.2/user")
 
         webView.webViewClient = object : WebViewClient() {//ここがないないと一部のurlがredirectする

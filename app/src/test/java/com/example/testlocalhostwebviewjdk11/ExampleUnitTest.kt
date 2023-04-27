@@ -1,4 +1,4 @@
-package com.example.testloaclhostwebview
+package com.example.testlocalhostwebviewjdk11
 
 import org.junit.Test
 

@@ -1,13 +1,19 @@
-package com.example.testloaclhostwebview
+package com.example.testlocalhostwebviewjdk11
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Button
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.testlocalhostwebviewjdk11.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,14 +35,14 @@ class MainActivity : AppCompatActivity() {
         //http://10.0.2.2
         // http://www.google.co.jp   http://10.0.2.2/mobile/favorite
         // http://10.0.2.2:8080   http://10.0.2.2/mobile/login
-        webView.loadUrl("http://10.0.2.2/mobile/favorite")
+        webView.loadUrl("http://www.google.co.jp")
 
         webView.webViewClient = object : WebViewClient() {//ここがないないと一部のurlがredirectする
-            @Deprecated("Deprecated in Java")
-            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
-                view.loadUrl(url)
-                return true
-            }
+        @Deprecated("Deprecated in Java")
+        override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+            view.loadUrl(url)
+            return true
+        }
         }
     }
 }

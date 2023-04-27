@@ -1,3 +1,3 @@
 # testLoaclhostWebview
 
-JDK 17
+JDK 11
